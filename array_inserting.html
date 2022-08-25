@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Inserting</title>
+    <script>
+        // let data = [9, 4, 2, 8, 17];
+        // let newEl = 70;
+        // let position = 2;
+
+        // document.write(`Before---> ${data} <br>`);
+
+        // for (let i = data.length - 1; i >= 0; i--) {
+        //     //document.write(`Array ${i} is ${data[i]} <br>`);
+        //     if (i >= position) {
+        //         console.log(i);//2,3,4
+        //         data[i + 1] = data[i];
+        //         if (i == position) {
+        //             // console.log(data[i]);
+        //             data[i] = newEl;
+        //         }
+        //     }
+        // }
+        // document.write(`After---> ${data} <br>`);
+
+        function insertEl() {
+            let data = [9, 4, 2, 8, 17];
+            let newEl = document.getElementById('newel').value;
+            newEl = parseInt(newEl);
+            let position = document.getElementById('position').value;
+
+            for (let i = data.length - 1; i >= 0; i--) {
+                //console.log(i);//4,3,2,1,0
+                if (i >= position) {//2,3,4
+                    data[i + 1] = data[i];
+                    if (i == position) {
+                        //console.log(data[i]);
+                        data[i] = newEl;
+                    }
+                }
+
+            }
+            console.log(data);
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" placeholder="enter position" id="position">
+    <input type="text" placeholder="enter new element" id="newel">
+    <button onclick="insertEl()">New Element</button>
+</body>
+
+</html>
